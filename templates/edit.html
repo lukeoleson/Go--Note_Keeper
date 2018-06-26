@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="/static/pure-min.css">
+  <style media="screen">
+  body {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="pure-g">
+
+      <div class="pure-u-1">
+        <p>
+          <a class="pure-button pure-button-primary" href="/">Index</a>
+          <!-- <a class="pure-button pure-button-primary" href="/view/">Delete Note</a> -->
+        </p>
+      </div>
+
+      <div class="pure-u-1">
+        <p>
+          <form class="pure-form pure-form-stacked" action="/edit/{{ .ID }}" method="POST" method="">
+
+                  <input class="pure-input-1" name="title" placeholder="Title" value = "{{ .Title }}">
+
+                  <textarea class="pure-input-1" name="content" rows="20">{{ .Content }}</textarea>
+
+                  <button type="submit" value="Save" class="pure-button pure-button-primary">Update Note</button>
+
+          </form>
+        </p>
+      </div>
+      <p>
+
+      </p>
+
+  </div>
+
+</body>
+</html>

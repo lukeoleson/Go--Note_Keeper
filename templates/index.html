@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link rel="stylesheet" href="static/pure-min.css">
+  <style media="screen">
+  body {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="pure-g">
+
+      <div class="pure-u-1">
+        <p>
+          <a class="pure-button pure-button-primary" href="/">Index</a>
+          <a class="pure-button pure-button-primary" href="/new">Add Note</a>
+        </p>
+      </div>
+
+      <div class="pure-u-1">
+        <p>
+          {{ range . }}
+          <a href="/view/{{ .ID }}">{{ .Title }}</a> <br>
+          {{ end }}
+        </p>
+      </div>
+
+  </div>
+
+</body>
+</html>
